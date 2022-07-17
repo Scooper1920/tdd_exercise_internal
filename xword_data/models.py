@@ -27,3 +27,8 @@ class Clue(models.Model):
     clue_text   = models.CharField(max_length=512)
     theme       = models.BooleanField(default=False,null=True, blank=True)
    
+    class Meta:
+            constraints  = [
+                models.UniqueConstraint(fields =['entry','puzzle'], name='unique_entry')
+            ]
+
