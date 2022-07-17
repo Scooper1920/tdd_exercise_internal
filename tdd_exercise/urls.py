@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from tdd_exercise import views
+from xword_data import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
 
-    path("",views.home_view, name ='home_view' )
+    path("",views.home_view, name ='home_view' ),
 ]
