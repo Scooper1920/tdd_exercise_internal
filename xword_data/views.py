@@ -22,3 +22,8 @@ def drill_view(request):
 def answer_view(request):
     pass 
 
+# - **Answer view:** when reached via a successful guess, this view congratulates the user on their
+#   success and offers up some additional data about the clue. If this is the only occurrence of the
+#   clue in the database then that is stated. If, however, the clue appears more than once in the
+#   database then the answer page for the clue presents a table of Entries associated with the clue
+#   and a count of how many times that Clue/Entry pair appear in the database.
