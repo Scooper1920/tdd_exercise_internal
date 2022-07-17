@@ -80,12 +80,7 @@ WSGI_APPLICATION = 'tdd_exercise.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = {'default': env.db()}
 
 
 # Password validation
@@ -106,6 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "xword_data.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
