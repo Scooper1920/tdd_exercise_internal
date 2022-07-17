@@ -10,6 +10,7 @@ beautifulsoup4 = "==4.7.1"
 environ = "*"
 django-environ = "*"
 psycopg2-binary = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 
