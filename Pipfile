@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "<2.3"
+factory-boy = "==2.11.1"
+beautifulsoup4 = "==4.7.1"
+environ = "*"
+django-environ = "*"
+psycopg2-binary = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
