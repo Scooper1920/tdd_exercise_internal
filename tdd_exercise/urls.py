@@ -23,5 +23,5 @@ urlpatterns = [
 
     path('accounts/', include('registration.backends.default.urls')),
 
-    path("",views.home_view, name ='home_view' ),
+    path("",views.drill_view, name ='drill_view' ),
 ]

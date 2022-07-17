@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
-# @login_required
-def home_view(request):
+# @login_required - commented out due to redirect error after login "database not connected to utc"
+#google advised likely due to psycopg-binary version
+def drill_view(request):
     
-    return render(request, "xword/home_view.html")
+    return render(request, "xword/drill_view.html")
