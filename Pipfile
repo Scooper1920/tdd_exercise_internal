@@ -12,6 +12,7 @@ django-environ = "*"
 psycopg2-binary = "*"
 django-debug-toolbar = "*"
 django-registration-redux = "*"
+django-extensions = "*"
 
 [dev-packages]
 

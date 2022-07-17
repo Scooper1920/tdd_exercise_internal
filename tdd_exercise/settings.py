@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'xword_data',
     'debug_toolbar',
+    'django_extensions',
     
 ]
 
