@@ -11,11 +11,15 @@
 <body>
     <main role="main" class="container">
         {% block content %}
-        <h1>HELLO WORLD</h1>
-        {% for clue in clues %}
+        <h1>Crossword Drill</h1>
         <h1>Clue: {{clue.clue_text}}</h1>
-        {% endfor %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" name="textfield">
+            
+            <button type="submit">Upload text</button>
+            </form>
+            
         {% endblock %}
-   
 </body>
 </html>

@@ -1,5 +1,7 @@
+from importlib.metadata import EntryPoints
 from django.shortcuts import render
 from .models import Puzzle, Entry, Clue
+from .forms import EntryForm
 import random
 # from django.contrib.auth.decorators import  login_required
 
@@ -8,10 +10,20 @@ import random
 # @login_required - commented out due to redirect error after login "database not connected to utc"
 #google advised likely due to psycopg-binary version
 def drill_view(request):
-    clues = list(Clue.objects.all())
-    clues = random.sample(clues,1)
+    clue = Clue.objects.order_by("?").first()
+    guess = request.POST.get('textfield', None)
+
+    if guess == Clue.entry:
+        html = ("<H1>Great Job! You did it!</H1>")
+        return render(request, "xword/drill_view.html",context={'clue':clue,'guess':guess, 'html':html})
+
+    if guess != Clue.entry:
+        html = ("no")
+        return render(request, "xword/drill_view.html",context={'clue':clue,'guess':guess, 'html':html})
+            
+    else:
     
-    return render(request, "xword/drill_view.html",context={'clues':clues})
+        return render(request, "xword/drill_view.html",context={'clue':clue,'form':form })
 
 # - **Drill view:** presents a random clue with information about the entry (length and puzzle
 #   where it appeared) to the user, and includes an input field where the user can provide a guess

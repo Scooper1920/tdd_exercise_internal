@@ -21,8 +21,11 @@ class Puzzle(models.Model):
 class Entry(models.Model):
     entry_text  = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.entry_text
+
 class Clue(models.Model):
-    entry       = models.ForeignKey('Entry', related_name='clues', on_delete=models.CASCADE)
+    entry       = models.ManyToManyField('Entry', related_name='clues')
     puzzle      = models.ForeignKey('Puzzle',related_name='puzzle_clues', on_delete=models.CASCADE)
     clue_text   = models.CharField(max_length=512)
     theme       = models.BooleanField(default=False,null=True, blank=True)
