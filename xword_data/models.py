@@ -26,9 +26,10 @@ class Clue(models.Model):
     puzzle      = models.ForeignKey('Puzzle',related_name='puzzle_clues', on_delete=models.CASCADE)
     clue_text   = models.CharField(max_length=512)
     theme       = models.BooleanField(default=False,null=True, blank=True)
-   
-    # class Meta:
-    #         constraints  = [
-    #             models.UniqueConstraint(fields =['entry','puzzle'], name='unique_entry')
-    #         ]
 
+    
+    class Meta:
+     
+
+        def __str__(self):
+            return self.name

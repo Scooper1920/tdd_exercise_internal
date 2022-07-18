@@ -12,6 +12,9 @@
     <main role="main" class="container">
         {% block content %}
         <h1>HELLO WORLD</h1>
+        {% for clue in clues %}
+        <h1>Clue: {{clue.clue_text}}</h1>
+        {% endfor %}
         {% endblock %}
    
 </body>

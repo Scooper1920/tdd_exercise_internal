@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Puzzle, Entry, Clue
+import random
 # from django.contrib.auth.decorators import  login_required
 
 # Create your views here.
@@ -7,9 +8,10 @@ from .models import Puzzle, Entry, Clue
 # @login_required - commented out due to redirect error after login "database not connected to utc"
 #google advised likely due to psycopg-binary version
 def drill_view(request):
-    clue = Clue.objects.all()
+    clues = list(Clue.objects.all())
+    clues = random.sample(clues,1)
     
-    return render(request, "xword/drill_view.html")
+    return render(request, "xword/drill_view.html",context={'clues':clues})
 
 # - **Drill view:** presents a random clue with information about the entry (length and puzzle
 #   where it appeared) to the user, and includes an input field where the user can provide a guess
